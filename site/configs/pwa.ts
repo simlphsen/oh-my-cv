@@ -1,6 +1,6 @@
 import type { ModuleOptions } from "@vite-pwa/nuxt";
 
-const scope = "/";
+const scope = "/oh-my-cv/";
 
 export const pwa: ModuleOptions = {
   registerType: "autoUpdate",
@@ -13,17 +13,17 @@ export const pwa: ModuleOptions = {
     short_name: "Oh My CV!",
     icons: [
       {
-        src: "/pwa-192x192.png",
+        src: "/oh-my-cv/pwa-192x192.png",
         sizes: "192x192",
         type: "image/png"
       },
       {
-        src: "/pwa-512x512.png",
+        src: "/oh-my-cv/pwa-512x512.png",
         sizes: "512x512",
         type: "image/png"
       },
       {
-        src: "/favicon.svg",
+        src: "/oh-my-cv/favicon.svg",
         sizes: "512x512",
         type: "image/svg",
         purpose: "any maskable"

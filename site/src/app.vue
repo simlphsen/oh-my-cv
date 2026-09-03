@@ -29,7 +29,7 @@ useHead({
     {
       rel: "icon",
       type: "image/svg+xml",
-      href: () => (preferredDark.value ? "/favicon-dark.svg" : "/favicon.svg")
+      href: () => (preferredDark.value ? "/oh-my-cv/favicon-dark.svg" : "/oh-my-cv/favicon.svg")
     }
   ],
   script: [
