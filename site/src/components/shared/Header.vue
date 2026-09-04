@@ -1,7 +1,6 @@
 <template>
   <header
-    class="hstack justify-between pl-4 pr-1 sticky top-0 z-40 backdrop-blur-md"
-    :class="$colorMode.value === 'dark' ? 'bg-background/70 border-b border-white/10' : 'bg-background/70 border-b border-black/5'"
+    class="hstack justify-between pl-4 pr-1 sticky top-0 z-40 glass-strong rounded-none border-x-0 border-t-0"
   >
     <nuxt-link
       class="hstack gap-x-2 transition-opacity hover:opacity-75"

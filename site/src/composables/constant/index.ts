@@ -1,7 +1,7 @@
 import * as V from "./variables";
-import type { Font, ValidPaperSize, ValidVersion } from "./variables";
+import type { Font, ValidPaperSize, ValidVersion, ResumeTemplate } from "./variables";
 
-export type { Font, ValidPaperSize, ValidVersion };
+export type { Font, ValidPaperSize, ValidVersion, ResumeTemplate };
 
 export const useConstant = () => {
   const FONT = {
@@ -48,6 +48,12 @@ export const useConstant = () => {
     CSS_CONTENT: V.DEFAULT_CSS_CONTENT
   };
 
+  const TEMPLATE = {
+    LIST: V.TEMPLATES,
+    DEFAULT_ID: V.DEFAULT_TEMPLATE_ID,
+    getById: V.getTemplateById
+  };
+
   const VERSION = {
     CURRENT: V.CURRENT_VERSION,
     EMPTY_FALLBACK: V.EMPTY_VERSION_FALLBACK,
@@ -63,6 +69,7 @@ export const useConstant = () => {
     RENDER,
     COLOR,
     DEFAULT,
+    TEMPLATE,
     VERSION
   };
 };

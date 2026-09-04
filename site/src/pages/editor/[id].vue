@@ -50,6 +50,22 @@
         <EditorToolbar v-if="data.loaded" />
         <UiSkeleton v-else class="h-full w-62 bg-secondary mr-10" />
       </div>
+
+      <!-- Autosave indicator -->
+      <Transition
+        enter-active-class="transition-opacity duration-300"
+        leave-active-class="transition-opacity duration-300"
+        enter-from-class="opacity-0"
+        leave-to-class="opacity-0"
+      >
+        <div
+          v-show="autosaved"
+          class="fixed bottom-4 right-4 z-20 hstack gap-x-1.5 glass glass-strong px-3 py-1.5 text-xs text-muted-foreground pointer-events-none"
+        >
+          <span class="i-line-md:confirm text-primary" />
+          {{ $t("editor.autosaved") }}
+        </div>
+      </Transition>
     </div>
   </div>
 </template>
@@ -59,6 +75,7 @@ import { isInteger } from "@renovamen/utils";
 
 const route = useRoute();
 const { data } = useDataStore();
+const { styles } = useStyleStore();
 
 // Fetch resume data
 onMounted(() => {
@@ -70,4 +87,52 @@ onMounted(() => {
 // Toogle toolbar
 const { width } = useWindowSize();
 const isToolbarOpen = ref(width.value > 1024);
+
+// === Autosave ===
+const autosaved = ref(false);
+const suppressAutosave = ref(false);
+
+// Skip saving while the resume is being loaded into the store
+watch(
+  () => data.loaded,
+  (loaded) => {
+    if (loaded) {
+      suppressAutosave.value = true;
+      setTimeout(() => {
+        suppressAutosave.value = false;
+      }, 500);
+    }
+  }
+);
+
+const save = async () => {
+  if (!data.loaded || data.resumeId === null || suppressAutosave.value) return;
+
+  await storageService.updateResume(
+    {
+      id: data.resumeId,
+      name: data.resumeName,
+      markdown: data.markdown,
+      css: data.css,
+      styles: toRaw(styles)
+    },
+    true,
+    true
+  );
+
+  autosaved.value = true;
+  setTimeout(() => {
+    autosaved.value = false;
+  }, 2000);
+};
+
+// Debounce and watch markdown / css / styles changes
+watchDebounced(
+  [() => data.markdown, () => data.css, () => toRaw(styles)],
+  save,
+  {
+    debounce: 800,
+    deep: true
+  }
+);
 </script>

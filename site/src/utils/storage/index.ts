@@ -1,5 +1,5 @@
 import { downloadFile } from "@renovamen/utils";
-import type { ValidVersion } from "~/composables/constant";
+import type { ValidVersion, ResumeTemplate } from "~/composables/constant";
 import { LocalForageDbService } from "./localForage";
 import { setResume, IsValid } from "./utils";
 import { MigrateService } from "./migrate";
@@ -27,14 +27,17 @@ export class StorageService {
     this._db = AVAILABLE_SERVICES[service];
   }
 
-  private _createEmptyResume(): DbResumeEmpty {
-    const { DEFAULT } = useConstant();
+  private _createEmptyResume(template?: ResumeTemplate): DbResumeEmpty {
+    const { DEFAULT, TEMPLATE } = useConstant();
+
+    // Use the provided template, or fall back to the default one
+    const t = template ?? TEMPLATE.getById(TEMPLATE.DEFAULT_ID);
 
     return {
       name: DEFAULT.RESUME_NAME,
-      markdown: DEFAULT.MD_CONTENT,
-      css: DEFAULT.CSS_CONTENT,
-      styles: DEFAULT.STYLES
+      markdown: t.markdown,
+      css: t.css,
+      styles: t.styles
     };
   }
 
@@ -49,13 +52,13 @@ export class StorageService {
     return data ?? [];
   }
 
-  public async updateResume(data: DbResumeUpdate, newUpdateTime = true) {
+  public async updateResume(data: DbResumeUpdate, newUpdateTime = true, silent = false) {
     const { data: updatedData, error } = await this._db.update(data, newUpdateTime);
 
     if (error) {
       // TODO: Use toast to show error message
       console.error("Update error:", error.message);
-    } else {
+    } else if (!silent) {
       const toast = useToast();
       toast.save();
     }
@@ -63,8 +66,10 @@ export class StorageService {
     return updatedData;
   }
 
-  public async createResume() {
-    const { data, error } = await this._db.create(this._createEmptyResume());
+  public async createResume(templateId?: string) {
+    const { TEMPLATE } = useConstant();
+    const template = TEMPLATE.getById(templateId);
+    const { data, error } = await this._db.create(this._createEmptyResume(template));
 
     if (error) {
       // TODO: Use toast to show error message

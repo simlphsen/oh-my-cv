@@ -30,6 +30,22 @@ dashboard:
   duplicate: Duplicar
   delete: Eliminar
 
+template:
+  dialog:
+    title: Elige una plantilla
+    desc: Elige un estilo para empezar. Puedes personalizarlo todo más tarde.
+  classic: Clásica
+  classic_desc: Tipografía tradicional con títulos subrayados
+  modern: Moderna
+  modern_desc: Sans-serif limpio con barras laterales en los títulos
+  colorful: Colorida
+  colorful_desc: Bloques de acento audaces y separadores punteados
+  elegant: Elegante
+  elegant_desc: Títulos centrados con separadores finos
+
+editor:
+  autosaved: Guardado automáticamente
+
 toolbar:
   file:
     title: Archivo

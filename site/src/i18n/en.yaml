@@ -30,6 +30,22 @@ dashboard:
   duplicate: Duplicate
   delete: Delete
 
+template:
+  dialog:
+    title: Choose a Template
+    desc: Pick a style to start with. You can customize everything later.
+  classic: Classic
+  classic_desc: Traditional typesetting with underlined headings
+  modern: Modern
+  modern_desc: Clean sans-serif with left-bar headings
+  colorful: Colorful
+  colorful_desc: Bold accent blocks and dotted dividers
+  elegant: Elegant
+  elegant_desc: Centered headings with hairline dividers
+
+editor:
+  autosaved: Autosaved
+
 toolbar:
   file:
     title: File

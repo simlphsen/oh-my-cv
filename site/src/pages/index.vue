@@ -37,11 +37,11 @@
         </UiButton>
       </div>
 
-      <div m="t-16 x-auto" grid="~ cols-1 sm:cols-2 gap-6" max-w-150>
+      <div m="t-14 sm:t-16 x-auto" grid="~ cols-1 sm:cols-2 gap-4 sm:gap-6" max-w-150>
         <div
           v-for="i in [0, 1]"
           :key="i"
-          class="rounded-2xl border bg-card p-6 shadow-sm transition-all hover:(shadow-lg -translate-y-1)"
+          class="glass-card p-6 transition-transform duration-200 hover:-translate-y-1"
         >
           <div hstack mb-4 gap-x-3>
             <span

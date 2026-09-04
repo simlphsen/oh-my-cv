@@ -30,6 +30,22 @@ dashboard:
   rename: 重命名
   delete: 删除
 
+template:
+  dialog:
+    title: 选择模板
+    desc: 选择一个模板开始，之后仍可自定义所有内容。
+  classic: 经典
+  classic_desc: 传统排印，带下划线的标题
+  modern: 现代
+  modern_desc: 简洁无衬线，标题左侧竖线
+  colorful: 彩色
+  colorful_desc: 醒目的色块与点线分隔
+  elegant: 优雅
+  elegant_desc: 居中标题，细线分隔
+
+editor:
+  autosaved: 已自动保存
+
 toolbar:
   file:
     title: 文件
