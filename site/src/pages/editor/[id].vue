@@ -20,9 +20,9 @@
       </template>
     </SharedHeader>
 
-    <div class="workspace flex pb-2">
-      <SplitterGroup id="splitter-editor" direction="horizontal" class="px-3">
-        <SplitterPanel id="code-pane">
+    <div class="workspace flex px-3 pb-3 gap-1.5">
+      <SplitterGroup id="splitter-editor" direction="horizontal">
+        <SplitterPanel id="code-pane" class="py-2">
           <EditorCode v-if="data.loaded" />
           <div v-else class="flex flex-col gap-y-2 h-full">
             <UiSkeleton class="h-10 bg-secondary" />
@@ -35,7 +35,7 @@
           class="w-3 relative after:(content-[''] absolute bg-gray-400/40 w-1 h-10 rounded-full inset-0 m-auto)"
         />
 
-        <SplitterPanel id="preview-pane">
+        <SplitterPanel id="preview-pane" class="py-2">
           <EditorPreview v-if="data.loaded" />
           <UiSkeleton v-else class="size-full bg-secondary" />
         </SplitterPanel>
@@ -44,6 +44,7 @@
       <div
         v-if="isToolbarOpen"
         id="tools-pane"
+        class="py-2"
         lt-lg="fixed z-10 max-w-full h-full right-0 top-12 pb-10"
       >
         <EditorToolbar v-if="data.loaded" />

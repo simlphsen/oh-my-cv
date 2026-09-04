@@ -1,10 +1,18 @@
 <template>
-  <div id="dashboard-page">
+  <div id="dashboard-page" class="flex flex-col bg-secondary/50">
     <SharedHeader />
 
-    <div class="workspace max-w-310 mx-auto" flex="~ col" p="x-4 y-8">
+    <div class="workspace max-w-310 mx-auto w-full" flex="~ col" p="x-4 y-8">
       <div class="px-2 space-y-2" md="hstack justify-between">
-        <h1 font-bold text-3xl>{{ $t("dashboard.my_resumes") }}</h1>
+        <div class="hstack gap-x-3">
+          <span
+            class="size-10 rounded-xl bg-primary/10 text-primary flex-center"
+          >
+            <span i-ic:round-description text-2xl />
+          </span>
+          <h1 font-bold text-3xl>{{ $t("dashboard.my_resumes") }}</h1>
+        </div>
+
         <DashboardFile @update="refresh" />
       </div>
 
@@ -22,7 +30,7 @@
           </template>
           <template v-else>
             <div v-for="i in 4" :key="i" class="w-56 h-80">
-              <UiSkeleton class="w-[210px] h-[299px] bg-secondary mx-auto" />
+              <UiSkeleton class="w-[210px] h-[299px] bg-secondary mx-auto rounded-md" />
             </div>
           </template>
         </div>

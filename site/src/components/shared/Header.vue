@@ -1,6 +1,12 @@
 <template>
-  <header class="hstack justify-between pl-4 pr-1">
-    <nuxt-link class="hstack gap-x-2" :to="$nuxt.$localePath('/')">
+  <header
+    class="hstack justify-between pl-4 pr-1 sticky top-0 z-40 backdrop-blur-md"
+    :class="$colorMode.value === 'dark' ? 'bg-background/70 border-b border-white/10' : 'bg-background/70 border-b border-black/5'"
+  >
+    <nuxt-link
+      class="hstack gap-x-2 transition-opacity hover:opacity-75"
+      :to="$nuxt.$localePath('/')"
+    >
       <SharedLogo text-base />
       <div text-lg><SharedBrandName /></div>
     </nuxt-link>

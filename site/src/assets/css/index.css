@@ -10,6 +10,53 @@
 body {
   color: hsl(var(--foreground));
   background: hsl(var(--accent));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: hsl(var(--primary) / 0.18);
+}
+
+/* Refined scrollbar */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar { /* Safari and Chrome */
+  display: none;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 9999px;
+  border: 3px solid hsl(var(--accent));
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Utility for hiding scrollbar */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
 
 /* `workspace` element should fill the space not occupied by the header */
@@ -24,14 +71,4 @@ header {
 /* For icons used in resumes */
 svg.iconify {
   display: inline-block;
-}
-
-/* Utility for hiding scrollbar */
-.hide-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-.hide-scrollbar::-webkit-scrollbar { /* Safari and Chrome */
-  display: none;
 }

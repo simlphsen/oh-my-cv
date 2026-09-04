@@ -67,38 +67,38 @@ export default defineConfig({
     presetShadcn(
       {
         color: {
-          base: "orange",
+          base: "blue",
           light: {
-            background: "0 0% 100%",
-            foreground: "215 25% 27%",
+            background: "210 40% 98%",
+            foreground: "222 47% 11%",
             card: "0 0% 100%",
-            "card-foreground": "215 25% 27%",
+            "card-foreground": "222 47% 11%",
             popover: "0 0% 100%",
-            "popover-foreground": "215 25% 27%",
-            secondary: "220 13% 91%",
-            "secondary-foreground": "220.9 39.3% 11%", // gray
-            muted: "220 14.3% 95.9%", // gray
-            "muted-foreground": "220 8.9% 46.1%", // gray
-            accent: "220 14.3% 95.9%", // gray
-            "accent-foreground": "220.9 39.3% 11%", // gray
-            border: "216 12% 85%",
-            input: "216 12% 85%"
+            "popover-foreground": "222 47% 11%",
+            secondary: "217 33% 94%",
+            "secondary-foreground": "222 47% 20%", // slate-800
+            muted: "217 33% 94%", // slate-200
+            "muted-foreground": "215 16% 47%", // slate-500
+            accent: "217 33% 95%", // slate-100
+            "accent-foreground": "222 47% 15%", // slate-800
+            border: "216 19% 87%", // slate-300
+            input: "216 19% 87%" // slate-300
           },
           dark: {
-            background: "213 12% 15%",
-            foreground: "0 0% 90%",
-            card: "213 12% 15%",
-            "card-foreground": "0 0% 90%",
-            popover: "213 12% 15%",
-            "popover-foreground": "0 0% 90%",
-            secondary: "230 5% 36%",
-            "secondary-foreground": "0 0% 98%", // neutral
-            muted: "220 10% 21%",
-            "muted-foreground": "0 0% 63.9%", // neutral
-            accent: "220 10% 21%",
-            "accent-foreground": "0 0% 98%", // neutral
-            border: "0 0% 45%",
-            input: "0 0% 45%"
+            background: "222 47% 11%",
+            foreground: "210 40% 98%",
+            card: "222 47% 13%",
+            "card-foreground": "210 40% 98%",
+            popover: "222 47% 13%",
+            "popover-foreground": "210 40% 98%",
+            secondary: "217 33% 18%",
+            "secondary-foreground": "210 40% 98%", // slate-100
+            muted: "217 33% 17%",
+            "muted-foreground": "215 20% 65%", // slate-400
+            accent: "217 33% 16%",
+            "accent-foreground": "210 40% 98%", // slate-100
+            border: "217 33% 24%",
+            input: "217 33% 24%"
           }
         }
       },
