@@ -12,6 +12,7 @@ head:
 landing:
   hero: 用 Markdown 写<span text-primary>简历</span>！
   desc: 能让您轻松地制作和管理简历，它开源免费，且绝不会（也无法）收集您的数据
+  features: 功能特性
   start: 开始制作简历
   feats:
     - title: 简单且强大
@@ -21,6 +22,7 @@ landing:
 
 dashboard:
   my_resumes: 我的简历
+  subtitle: 用 Markdown 创建、编辑和管理你的简历
   created: 创建于：
   updated: 更新于：
   new: 新建

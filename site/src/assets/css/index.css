@@ -153,3 +153,17 @@ svg.iconify {
     radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--primary) / 0.12), transparent),
     hsl(var(--accent));
 }
+
+/* === GitHub-style content layout helpers === */
+:root {
+  --page-max-w: 1120px;
+}
+
+/* Section heading: small muted label above a block, GitHub-style */
+.section-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+}

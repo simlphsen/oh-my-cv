@@ -12,6 +12,7 @@ head:
 landing:
   hero: Write your <span text-primary>resumes</span> in Markdown!
   desc: is a free, open-source tool that helps you easily create and manage your resumes, while keeping your data private.
+  features: Features
   start: Create My Resume
   feats:
     - title: Simple and Powerful
@@ -21,6 +22,7 @@ landing:
 
 dashboard:
   my_resumes: My Resumes
+  subtitle: Create, edit and manage your resumes in Markdown
   created: "Created: "
   updated: "Updated: "
   new: New

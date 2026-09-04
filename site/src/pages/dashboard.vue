@@ -2,22 +2,34 @@
   <div id="dashboard-page" class="flex flex-col bg-secondary/50">
     <SharedHeader />
 
-    <div class="workspace max-w-310 mx-auto w-full" flex="~ col" p="x-4 y-8">
-      <div class="px-2 space-y-3" md="hstack justify-between">
-        <div class="hstack gap-x-3">
-          <span
-            class="size-10 rounded-xl bg-primary/10 text-primary flex-center glass"
-          >
-            <span i-ic:round-description text-2xl />
-          </span>
-          <h1 font-bold text-2xl sm:text-3xl>{{ $t("dashboard.my_resumes") }}</h1>
+    <div
+      class="workspace w-full mx-auto px-4 py-8"
+      style="max-width: var(--page-max-w)"
+      flex="~ col"
+    >
+      <!-- Page header (GitHub-style) -->
+      <div class="px-2 space-y-2" md="hstack justify-between">
+        <div class="space-y-1">
+          <div class="hstack gap-x-3">
+            <span
+              class="size-10 rounded-lg bg-primary/10 text-primary flex-center glass"
+            >
+              <span i-ic:round-description text-2xl />
+            </span>
+            <h1 font-bold text-2xl sm:text-3xl>{{ $t("dashboard.my_resumes") }}</h1>
+          </div>
+          <div class="pl-13 text-sm text-muted-foreground">
+            {{ $t("dashboard.subtitle") }}
+          </div>
         </div>
 
-        <DashboardFile @update="refresh" />
+        <div class="pl-13 md:pl-0">
+          <DashboardFile @update="refresh" />
+        </div>
       </div>
 
-      <UiScrollArea class="flex-1 mt-4 px-2">
-        <div class="gap-x-4 gap-y-8 pt-4" flex="~ wrap" justify="center sm:start">
+      <UiScrollArea class="flex-1 mt-5 px-2">
+        <div class="gap-6 pt-4" flex="~ wrap" justify="center sm:start">
           <DashboardNewResume />
 
           <template v-if="status === 'success'">

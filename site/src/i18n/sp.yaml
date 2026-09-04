@@ -12,6 +12,7 @@ head:
 landing:
   hero: Escribe tu <span text-primary>curriculum vitae</span> en Markdown!
   desc: es una herramienta gratuita y de código abierto creada para crear y administrar sus currículums de la manera más fácil posible, sin perder la privacidad de sus datos.
+  features: Características
   start: Crear My Resumen
   feats:
     - title: Simple y poderoso
@@ -21,6 +22,7 @@ landing:
 
 dashboard:
   my_resumes: Mis CVs
+  subtitle: Crea, edita y gestiona tus CV en Markdown
   created: "Creado: "
   updated: "Actualizado: "
   new: Nuevo
